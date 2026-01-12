@@ -87,11 +87,6 @@ public enum ErrorCode {
 	/** 리소스 소유자가 아님 (본인 글만 수정/삭제 가능) */
 	NOT_RESOURCE_OWNER(HttpStatus.FORBIDDEN, "본인의 리소스만 수정/삭제할 수 있습니다."),
 
-	/** 밴드 멤버가 아님 */
-	NOT_BAND_MEMBER(HttpStatus.FORBIDDEN, "밴드 멤버만 접근할 수 있습니다."),
-
-	/** 밴드 리더가 아님 (리더 권한 필요) */
-	NOT_BAND_LEADER(HttpStatus.FORBIDDEN, "밴드 리더만 수행할 수 있는 작업입니다."),
 
 	/** 정지된 계정 (신고 등으로 인한 제재) */
 	ACCOUNT_SUSPENDED(HttpStatus.FORBIDDEN, "정지된 계정입니다. 관리자에게 문의하세요."),
@@ -115,8 +110,6 @@ public enum ErrorCode {
 	/** 사용자 정보 없음 */
 	USER_NOT_FOUND(HttpStatus.NOT_FOUND, "존재하지 않는 사용자입니다."),
 
-	/** 밴드 정보 없음 */
-	BAND_NOT_FOUND(HttpStatus.NOT_FOUND, "존재하지 않는 밴드입니다."),
 
 	/** 스튜디오 정보 없음 */
 	STUDIO_NOT_FOUND(HttpStatus.NOT_FOUND, "존재하지 않는 스튜디오입니다."),
@@ -136,23 +129,8 @@ public enum ErrorCode {
 	/** 예약 정보 없음 */
 	RESERVATION_NOT_FOUND(HttpStatus.NOT_FOUND, "존재하지 않는 예약입니다."),
 
-	/** 결제 정보 없음 */
-	PAYMENT_NOT_FOUND(HttpStatus.NOT_FOUND, "존재하지 않는 결제 정보입니다."),
-
 	/** 파일 정보 없음 */
 	FILE_NOT_FOUND(HttpStatus.NOT_FOUND, "파일을 찾을 수 없습니다."),
-
-	/** 밴드 모집글 정보 없음 */
-	BAND_RECRUITMENT_NOT_FOUND(HttpStatus.NOT_FOUND, "존재하지 않는 밴드 모집글입니다."),
-
-	/** 게스트 모집글 정보 없음 */
-	GUEST_RECRUITMENT_NOT_FOUND(HttpStatus.NOT_FOUND, "존재하지 않는 게스트 모집글입니다."),
-
-	/** 공연 정보 없음 */
-	EVENT_NOT_FOUND(HttpStatus.NOT_FOUND, "존재하지 않는 공연입니다."),
-
-	/** 중고거래 게시글 정보 없음 */
-	TRADE_POST_NOT_FOUND(HttpStatus.NOT_FOUND, "존재하지 않는 중고거래 게시글입니다."),
 
 	/** 쪽지 정보 없음 */
 	MESSAGE_NOT_FOUND(HttpStatus.NOT_FOUND, "존재하지 않는 쪽지입니다."),
@@ -187,15 +165,6 @@ public enum ErrorCode {
 	/** 중복된 전화번호 */
 	DUPLICATE_PHONE_NUMBER(HttpStatus.CONFLICT, "이미 등록된 전화번호입니다."),
 
-	/** 중복된 밴드 이름 */
-	DUPLICATE_BAND_NAME(HttpStatus.CONFLICT, "이미 사용 중인 밴드 이름입니다."),
-
-	/** 중복된 스튜디오 이름 */
-	DUPLICATE_STUDIO_NAME(HttpStatus.CONFLICT, "이미 등록된 스튜디오 이름입니다."),
-
-	/** 이미 밴드 멤버로 가입됨 */
-	ALREADY_BAND_MEMBER(HttpStatus.CONFLICT, "이미 해당 밴드의 멤버입니다."),
-
 	/** 이미 신청 완료 */
 	ALREADY_APPLIED(HttpStatus.CONFLICT, "이미 신청하였습니다."),
 
@@ -221,17 +190,8 @@ public enum ErrorCode {
 	/** 탈퇴한 사용자 */
 	WITHDRAWN_USER(HttpStatus.GONE, "탈퇴한 사용자입니다."),
 
-	/** 해체된 밴드 */
-	DISBANDED_BAND(HttpStatus.GONE, "해체된 밴드입니다."),
-
 	/** 마감된 게시글 (모집 완료) */
 	CLOSED_POST(HttpStatus.GONE, "마감된 게시글입니다."),
-
-	/** 종료된 공연 */
-	EXPIRED_EVENT(HttpStatus.GONE, "종료된 공연입니다."),
-
-	/** 판매 완료된 중고거래 상품 */
-	SOLD_OUT(HttpStatus.GONE, "판매 완료된 상품입니다."),
 
 	// 413 Payload Too Large
 	/** 요청 본문 크기 초과 */
@@ -271,12 +231,6 @@ public enum ErrorCode {
 
 	/** 본인 게시글 신청 불가 */
 	CANNOT_APPLY_OWN_POST(HttpStatus.UNPROCESSABLE_ENTITY, "본인의 게시글에는 신청할 수 없습니다."),
-
-	/** 리더는 밴드 탈퇴 불가 */
-	CANNOT_LEAVE_AS_LEADER(HttpStatus.UNPROCESSABLE_ENTITY, "리더는 밴드를 탈퇴할 수 없습니다. 리더를 위임하거나 밴드를 해체하세요."),
-
-	/** 마지막 멤버 탈퇴 불가 */
-	LAST_MEMBER_CANNOT_LEAVE(HttpStatus.UNPROCESSABLE_ENTITY, "마지막 멤버는 탈퇴할 수 없습니다."),
 
 	/** 잔액 부족 */
 	INSUFFICIENT_BALANCE(HttpStatus.UNPROCESSABLE_ENTITY, "잔액이 부족합니다."),
